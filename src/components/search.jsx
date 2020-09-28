@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import secrets from "../config/config"
 import Table from './table'
 
 
@@ -14,7 +13,7 @@ class Search extends Component {
 
 
     getInfo = () => {
-        const apiUrl = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=" + this.state.query + "&apikey=" + secrets.alphaVantage;
+        const apiUrl = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=" + this.state.query + "&apikey=" + process.env.REACT_APP_ALPHA_KEY;
         axios
             .get(apiUrl)
             .then(({ data }) => {

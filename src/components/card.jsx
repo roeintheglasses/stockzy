@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import secrets from '../config/config'
+
 
 export default function Card(props) {
     const [price, setPrice] = useState(0);
@@ -10,7 +10,7 @@ export default function Card(props) {
             style: 'currency',
             currency: 'USD',
         });
-        const url = "https://cloud.iexapis.com/stable/stock/" + props.name + "/quote?token=" + secrets.iex;
+        const url = "https://cloud.iexapis.com/stable/stock/" + props.name + "/quote?token=" + process.env.REACT_APP_IEX_KEY;
         axios.get(url)
             .then((res) => {
                 let stockPrice = res.data.latestPrice;
@@ -18,7 +18,7 @@ export default function Card(props) {
             }).catch(err => {
                 console.log(err)
             });
-    }, []);
+    }, [props]);
 
     return (
         <div className="card">

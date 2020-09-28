@@ -18,7 +18,6 @@ import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import { Button } from '@material-ui/core';
-import secrets from '../config/config'
 
 
 const tableIcons = {
@@ -56,7 +55,7 @@ export default function StockTable(props) {
                 let tempData = [];
                 let stockPrice = 0;
                 let marketCap = 0;
-                const url = "https://cloud.iexapis.com/stable/stock/" + item["1. symbol"] + "/quote?token=" + secrets.iex;
+                const url = "https://cloud.iexapis.com/stable/stock/" + item["1. symbol"] + "/quote?token=" + process.env.REACT_APP_IEX_KEY;
                 axios.get(url)
                     .then((res) => {
 

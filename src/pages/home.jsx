@@ -19,7 +19,7 @@ function home() {
                         <Card logo={facebookLogo} name="FB" price={206} />
                         <Card logo={amazonLogo} name="AMZN" price={206} />
                     </div>
-
+                    <Search />
                 </div>
             </div>
         </div>
