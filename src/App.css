@@ -32,7 +32,145 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navBar {
+  height: 70px;
+  width: 100%;
+  background: rgba(3, 28, 71, 0.8)
+}
+
+.brandLogo {
+  margin: 5px 15px;
+}
+
+.mainContainer {
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+
+/* cards */
+.cardsContainer {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card {
+  width: 400px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 2px;
+  border: 2px dotted rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.cardUpperRow {
+  display: flex;
+  align-items: center;
+  gap: 60%;
+  margin: 30px;
+}
+
+@media (max-width:1100px) {
+  .cardUpperRow {
+    display: flex;
+    align-items: center;
+    gap: 20%;
+    margin: 30px;
+  }
+}
+
+.cardLogo {
+  width: 60px;
+}
+
+.cardLowerRow {
+  margin: 20px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Table Elements */
+.MuiChip-sizeSmall {
+  background: #E6E6F2 !important;
+  color: #4A4AFF !important;
+  font-weight: 500;
+  user-select: none;
+}
+
+.MuiChip-labelSmall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MuiChip-labelSmall::before {
+  content: "•";
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+
+}
+
+/* search */
+
+.heading {
+  font-size: 30px;
+  padding: 16px 0;
+  color: #444;
+  text-align: center;
+}
+
+
+.search-label {
+  margin-bottom: 20px;
+  gap: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container input {
+  width: 60%;
+  text-align: center;
+  font-family: Roboto;
+  padding: 10px;
+  font-size: 1rem;
+  color: #7F79A1;
+  background: #F4F2FF;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.searchButton {
+  padding: 10px;
+  font-size: 1rem;
+  font-size: 1rem;
+  color: #FFF;
+  background: #6D5BD0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
