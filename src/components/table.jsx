@@ -17,7 +17,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 
 
 const tableIcons = {
@@ -78,15 +78,12 @@ export default function StockTable(props) {
         setTableData(props);
     }, [props]);
 
-    function handleOnClick(rowData) {
-        alert(rowData.name)
-    }
 
     return (
         <MaterialTable
             icons={tableIcons}
 
-            title="Stock Details Table"
+            title="Stock Results"
 
             columns={[
                 {
@@ -112,26 +109,26 @@ export default function StockTable(props) {
 
             ]}
             data={tableData}
-            actions={[
-                {
-                    icon: "",
-                    tooltip: 'Save Data',
-                    onClick: (event, rowData) => handleOnClick(rowData),
-                },
-            ]}
-            components={{
-                Action: props => (
-                    <Button
-                        onClick={(event) => props.action.onClick(event, props.data)}
-                        variant="contained"
-                        style={{ textTransform: 'none', padding: '5px 15px', background: '#18A0FB', width: '100px', color: 'white', }}
-                    >
-                        Save
-                    </Button>
-                ),
-            }}
+            // actions={[
+            //     {
+            //         icon: "",
+            //         tooltip: 'Save Data',
+            //         onClick: (event, rowData) => handleOnClick(rowData),
+            //     },
+            // ]}
+            // components={{
+            //     Action: props => (
+            //         <Button
+            //             onClick={(event) => props.action.onClick(event, props.data)}
+            //             variant="contained"
+            //             style={{ textTransform: 'none', padding: '5px 15px', background: '#18A0FB', width: '100px', color: 'white', }}
+            //         >
+            //             Save
+            //         </Button>
+            //     ),
+            // }}
             options={{
-                actionsColumnIndex: 3,
+                search: false,
                 headerStyle: {
                     backgroundColor: '#F4F2FF',
                     color: '#6E6893',

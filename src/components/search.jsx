@@ -28,7 +28,7 @@ class Search extends Component {
                 })
 
                 this.setState({
-                    result: data.bestMatches.slice(0, 3)
+                    result: data.bestMatches.slice(0, 5)
                 });
             })
             .catch((err) => {
@@ -74,10 +74,8 @@ class Search extends Component {
                     <div>
                         <Table tableData={
                             this.state.result
-                        } hasSearch={false}></Table>
-                        <p>{this.state.result["1. symbol"]}</p>
+                        }></Table>
                     </div>}
-
                 {this.state.error && <p className="error">Opps, Nothing found!</p>}
             </div>
         );

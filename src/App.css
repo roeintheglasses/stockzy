@@ -163,14 +163,22 @@
 }
 
 .searchButton {
-  padding: 10px;
+  padding: 9px 18px;
   font-size: 1rem;
   font-size: 1rem;
   color: #FFF;
   background: #6D5BD0;
   box-sizing: border-box;
   outline: none;
-  border: none;
+  border: 1px solid #6D5BD0;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.searchButton:hover {
+  background: #FFF;
+  color: #6D5BD0;
+  border: 1px solid #6D5BD0;
+
 }
