@@ -11,6 +11,8 @@ function home() {
     return (
         <div>
             <div className="navBar">
+                <h1>Stockzy</h1>
+                <h5>A Barebones Stocks App</h5>
             </div>
             <div className="mainContainer">
                 <div>

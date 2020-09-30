@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Table from './table'
+import LoadingGif from '../Assets/loading.gif'
 
 
 class Search extends Component {
@@ -8,7 +9,8 @@ class Search extends Component {
         query: "",
         result: [],
         error: false,
-        searchEmpty: true
+        firstLoad: true,
+        loading: true
     };
 
 
@@ -28,7 +30,8 @@ class Search extends Component {
                 })
 
                 this.setState({
-                    result: data.bestMatches.slice(0, 5)
+                    result: data.bestMatches.slice(0, 5),
+                    loading: false
                 });
             })
             .catch((err) => {
@@ -44,7 +47,9 @@ class Search extends Component {
     handleInputChange = () => {
         this.setState(
             {
-                query: this.search.value
+                query: this.search.value,
+                firstLoad: false,
+                loading: true
             },
             () => {
                 if (this.state.query && this.state.query.length > 1) {
@@ -70,13 +75,13 @@ class Search extends Component {
                     <button className='searchButton' onClick={this.handleInputChange}>Search</button>
 
                 </label>
-                {this.state.result &&
-                    <div>
-                        <Table tableData={
-                            this.state.result
-                        }></Table>
-                    </div>}
-                {this.state.error && <p className="error">Opps, Nothing found!</p>}
+                {!this.state.loading && <div>
+                    <Table tableData={
+                        this.state.result
+                    }></Table>
+                </div>}
+                { (this.state.loading && !this.state.firstLoad) && <img className="loading" src={LoadingGif} alt="Loading..." />
+                }
             </div>
         );
     }
