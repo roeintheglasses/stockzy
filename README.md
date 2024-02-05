@@ -60,9 +60,4 @@ yarn build
 for building the production version.
 
 #### You can add addition webpack config by changing the config-overrides file in the root directory.
-
-## Author :
-
-*  **Hrishi Jangir** - *Other Works* - [Portfolio](https://roeintheglasses.github.io)
-
 ### [License: MIT](LICENSE.md)  
